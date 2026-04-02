@@ -612,21 +612,21 @@
             </div>
 
             <div class="deals-list">
-                <div class="deal-row" onclick="showScreen('deal')">
+                <div class="deal-row" onclick="showDeal('ricardo')">
                     <span class="deal-time">09:30</span>
                     <div class="deal-info"><div class="deal-name">Ricardo Mendes Silva</div><div class="deal-subject">Reuniao - Interesse Jurere Spot III</div></div>
                     <span class="deal-value">R$ 420.000</span>
                     <span class="deal-closer">Daniel</span>
                     <span class="badge badge-briefed">BRIEFED</span>
                 </div>
-                <div class="deal-row" onclick="showScreen('deal')">
+                <div class="deal-row" onclick="showDeal('ana')">
                     <span class="deal-time">11:00</span>
                     <div class="deal-info"><div class="deal-name">Ana Paula Ferreira</div><div class="deal-subject">Follow-up - Novo Campeche Spot II</div></div>
                     <span class="deal-value">R$ 680.000</span>
                     <span class="deal-closer">Daniel</span>
                     <span class="badge badge-briefed">BRIEFED</span>
                 </div>
-                <div class="deal-row" onclick="showScreen('deal')">
+                <div class="deal-row" onclick="showDeal('carlos')">
                     <span class="deal-time">14:30</span>
                     <div class="deal-info"><div class="deal-name">Carlos Eduardo Braga</div><div class="deal-subject">Apresentacao - Barra Grande Spot</div></div>
                     <span class="deal-value">R$ 350.000</span>
@@ -634,7 +634,7 @@
                     <span class="badge badge-pending">PENDENTE</span>
                 </div>
                 <div class="section-divider">amanha</div>
-                <div class="deal-row" onclick="showScreen('deal')">
+                <div class="deal-row" onclick="showDeal('mariana')">
                     <span class="deal-time">10:00</span>
                     <div class="deal-info"><div class="deal-name">Mariana Costa Lima</div><div class="deal-subject">Primeiro contato - Natal Spot</div></div>
                     <span class="deal-value">R$ 520.000</span>
@@ -649,177 +649,142 @@
 </div>
 
 
-<!-- ===== SCREEN 3: DEAL DETAIL ===== -->
+<!-- ===== SCREEN 3: DEAL DETAIL (dinamico) ===== -->
 <div class="screen" id="screen-deal">
-    <div class="container">
-        <span class="detail-back" onclick="showScreen('agenda')">&larr; voltar para agenda</span>
-
-        <div class="lead-header">
-            <div class="lead-avatar">R</div>
-            <div class="lead-header-info">
-                <h1>Ricardo Mendes Silva</h1>
-                <p>Investidor &middot; Sao Paulo, SP &middot; 45 anos</p>
-            </div>
-            <div class="lead-header-badges">
-                <span class="badge badge-enriched">ENRICHED</span>
-                <button class="btn btn-sm btn-accent">Re-enriquecer</button>
-            </div>
-        </div>
-
-        <div style="display:flex;gap:8px;margin-bottom:20px">
-            <button class="btn btn-sm btn-outline">Regenerar briefing</button>
-            <button class="btn btn-sm btn-outline">Reenviar WhatsApp</button>
-        </div>
-
-        <div class="enrichment-grid">
-            <!-- Resumo IA -->
-            <div class="e-section full">
-                <div class="e-header"><h3>// Resumo IA</h3><span class="badge badge-briefed">GERADO</span></div>
-                <div class="e-body">
-                    <div class="briefing-box">&bull; <strong>Perfil:</strong> Investidor experiente, 45 anos, empresario do ramo de tecnologia em SP. Ja possui 2 imoveis em Florianopolis (Campeche e Jurere).
-
-&bull; <strong>Interesse atual:</strong> Jurere Spot III, unidade de 2 quartos para investimento em renda por temporada. Orcamento declarado de R$ 420.000.
-
-&bull; <strong>Historico CRM:</strong> 3 reunioes anteriores, mostrou interesse em rentabilidade. Pediu simulacao de ROI na ultima interacao (28/03). Respondeu rapido no WhatsApp.
-
-&bull; <strong>Patrimonio:</strong> Socio da TechFlow Solutions (CNPJ ativo desde 2015, capital social R$ 500K). Nenhum processo criminal encontrado.
-
-&bull; <strong>Rapport:</strong> Pratica surf e corrida (Instagram). Viaja frequentemente para praias do Nordeste. Gosta de vinhos. Use como gancho para conversa inicial.
-
-&bull; <strong>Atencao:</strong> Lead comparou com concorrente (Viva Benx nas notas). Reforce diferenciais Seazone: gestao integrada + rentabilidade comprovada.</div>
-                </div>
-            </div>
-
-            <!-- Dados Pessoais -->
-            <div class="e-section">
-                <div class="e-header"><h3>// Dados Pessoais</h3></div>
-                <div class="e-body">
-                    <div class="meta-grid">
-                        <div class="meta-item"><label>Nome</label><span>Ricardo Mendes Silva</span></div>
-                        <div class="meta-item"><label>Email</label><span>ricardo@techflow.com.br</span></div>
-                        <div class="meta-item"><label>Telefone</label><span>(11) 99887-6543</span></div>
-                        <div class="meta-item"><label>Idade</label><span>45 anos</span></div>
-                        <div class="meta-item"><label>Cidade</label><span>Sao Paulo, SP</span></div>
-                        <div class="meta-item"><label>Empresa</label><span>TechFlow Solutions</span></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- LinkedIn -->
-            <div class="e-section">
-                <div class="e-header"><h3>// Perfil Profissional</h3></div>
-                <div class="e-body">
-                    <div class="meta-grid">
-                        <div class="meta-item"><label>Headline</label><span>CEO & Founder at TechFlow</span></div>
-                        <div class="meta-item"><label>Ocupacao</label><span>Empreendedor / Tech</span></div>
-                    </div>
-                    <div style="margin-top:10px;font-size:0.82rem">
-                        <div style="padding:3px 0">CEO & Founder @ TechFlow Solutions (2015-atual)</div>
-                        <div style="padding:3px 0;color:var(--text-dim)">CTO @ DataBridge (2010-2015)</div>
-                        <div style="padding:3px 0;color:var(--text-dim)">MBA - FGV (2012)</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- JusBrasil -->
-            <div class="e-section">
-                <div class="e-header"><h3>// Historico Juridico</h3></div>
-                <div class="e-body">
-                    <p style="color:var(--success);font-size:0.82rem;margin-bottom:8px">&#10003; Nenhum processo criminal</p>
-                    <div class="lawsuit-item">
-                        <div class="lawsuit-title">Processo Trabalhista - TechFlow</div>
-                        <div class="lawsuit-snippet">Reclamacao trabalhista de ex-funcionario. Encerrado em 2023 com acordo. Sem relevancia.</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Patrimonio -->
-            <div class="e-section">
-                <div class="e-header"><h3>// Patrimonio / Empresas</h3></div>
-                <div class="e-body">
-                    <div style="padding:6px 0;border-bottom:1px solid var(--border)">
-                        <div style="font-weight:600;font-size:0.82rem">TechFlow Solutions Ltda</div>
-                        <div style="font-size:0.75rem;color:var(--text-dim);font-family:var(--font-mono)">CNPJ 12.345.678/0001-90 &middot; Ativa &middot; R$ 500K capital</div>
-                    </div>
-                    <div style="padding:6px 0">
-                        <div style="font-weight:600;font-size:0.82rem">2 imoveis em Florianopolis</div>
-                        <div style="font-size:0.75rem;color:var(--text-dim)">Apto Campeche (2019) &middot; Apto Jurere (2021)</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Redes Sociais -->
-            <div class="e-section">
-                <div class="e-header"><h3>// Redes Sociais</h3></div>
-                <div class="e-body">
-                    <div class="social-row"><span class="social-platform">Instagram</span><a href="#">@ricardo.mendes - 2.3k</a></div>
-                    <div class="social-row"><span class="social-platform">Facebook</span><a href="#">Ricardo Mendes Silva</a></div>
-                    <div class="social-row"><span class="social-platform">LinkedIn</span><a href="#">/in/ricardomendes</a></div>
-                </div>
-            </div>
-
-            <!-- Hobbies -->
-            <div class="e-section">
-                <div class="e-header"><h3>// Hobbies & Interesses</h3></div>
-                <div class="e-body">
-                    <label style="display:block;font-family:var(--font-mono);font-size:0.6rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:0.8px;margin-bottom:6px">Hobbies</label>
-                    <div class="hobby-tags">
-                        <span class="hobby-tag">Surf</span><span class="hobby-tag">Corrida</span><span class="hobby-tag">Vinhos</span><span class="hobby-tag">Viagens</span>
-                    </div>
-                    <label style="display:block;font-family:var(--font-mono);font-size:0.6rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:0.8px;margin:12px 0 6px">Interesses</label>
-                    <div class="hobby-tags">
-                        <span class="hobby-tag">Investimentos</span><span class="hobby-tag">Tecnologia</span><span class="hobby-tag">Startups</span><span class="hobby-tag">Gastronomia</span>
-                    </div>
-                    <p style="font-size:0.8rem;color:var(--text-dim);margin-top:10px">Empresario ativo, viaja frequentemente para praias. Estilo de vida premium. Casado, 2 filhos.</p>
-                </div>
-            </div>
-
-            <!-- Google -->
-            <div class="e-section">
-                <div class="e-header"><h3>// Presenca na Web</h3></div>
-                <div class="e-body">
-                    <div style="padding:5px 0;border-bottom:1px solid var(--border)"><a href="#" style="font-size:0.82rem;font-weight:500">Ricardo Mendes - TechFlow | LinkedIn</a><div style="font-size:0.72rem;color:var(--text-dim)">CEO da TechFlow Solutions, empresa de software em SP...</div></div>
-                    <div style="padding:5px 0;border-bottom:1px solid var(--border)"><a href="#" style="font-size:0.82rem;font-weight:500">TechFlow levanta R$ 5M em rodada Seed</a><div style="font-size:0.72rem;color:var(--text-dim)">Startup paulista fecha rodada com fundo de investimento...</div></div>
-                    <div style="padding:5px 0"><a href="#" style="font-size:0.82rem;font-weight:500">Palestra Web Summit Rio - Ricardo Mendes</a><div style="font-size:0.72rem;color:var(--text-dim)">Experiencias sobre transformacao digital no evento...</div></div>
-                </div>
-            </div>
-
-            <!-- CRM -->
-            <div class="e-section full">
-                <div class="e-header"><h3>// Historico CRM</h3></div>
-                <div class="e-body">
-                    <label style="display:block;font-family:var(--font-mono);font-size:0.6rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:0.8px;margin-bottom:8px">Deals</label>
-                    <div style="padding:5px 0;border-bottom:1px solid var(--border);font-size:0.82rem">Jurere Spot III - 2Q &middot; R$ 420.000 &middot; <span class="badge badge-pending">OPEN</span></div>
-                    <div style="padding:5px 0;font-size:0.82rem;color:var(--text-dim)">Novo Campeche Spot II &middot; R$ 380.000 &middot; <span class="badge badge-briefed">WON</span></div>
-
-                    <label style="display:block;font-family:var(--font-mono);font-size:0.6rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:0.8px;margin:14px 0 8px">Notas</label>
-                    <div class="timeline">
-                        <div class="timeline-item"><div class="timeline-date">28/03/2026</div><div class="timeline-content">Lead pediu simulacao de ROI para Jurere Spot III. Quer comparar rentabilidade com Campeche.</div></div>
-                        <div class="timeline-item"><div class="timeline-date">22/03/2026</div><div class="timeline-content">Reuniao online. Interesse em 2Q andar alto. Mencionou concorrente Viva Benx.</div></div>
-                        <div class="timeline-item"><div class="timeline-date">15/03/2026</div><div class="timeline-content">Primeiro contato via Inbound (Instagram Ads). Ja tem 2 imoveis em Floripa.</div></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <div class="container" id="deal-container"></div>
 </div>
 
 <!-- FOOTER -->
 <footer class="footer">
-    <p class="footer-credit">Made by <span>Daniel Honda</span></p>
     <p class="footer-author"><span>Daniel Itiro Honda</span> - Bizops - Hackaton 2026</p>
 </footer>
 
 <script>
+const leads = {
+  ricardo: {
+    nome: "Ricardo Mendes Silva", inicial: "R", subtitulo: "Investidor &middot; Sao Paulo, SP &middot; 45 anos", status: "ENRICHED",
+    briefing: `&bull; <strong>Perfil:</strong> Investidor experiente, 45 anos, empresario do ramo de tecnologia em SP. Ja possui 2 imoveis em Florianopolis (Campeche e Jurere).\n\n&bull; <strong>Interesse atual:</strong> Jurere Spot III, unidade de 2 quartos para investimento em renda por temporada. Orcamento declarado de R$ 420.000.\n\n&bull; <strong>Historico CRM:</strong> 3 reunioes anteriores, mostrou interesse em rentabilidade. Pediu simulacao de ROI na ultima interacao (28/03). Respondeu rapido no WhatsApp.\n\n&bull; <strong>Patrimonio:</strong> Socio da TechFlow Solutions (CNPJ ativo desde 2015, capital social R$ 500K). Nenhum processo criminal encontrado.\n\n&bull; <strong>Rapport:</strong> Pratica surf e corrida (Instagram). Viaja frequentemente para praias do Nordeste. Gosta de vinhos. Use como gancho para conversa inicial.\n\n&bull; <strong>Atencao:</strong> Lead comparou com concorrente (Viva Benx nas notas). Reforce diferenciais Seazone: gestao integrada + rentabilidade comprovada.`,
+    dados: { nome:"Ricardo Mendes Silva", email:"ricardo@techflow.com.br", telefone:"(11) 99887-6543", idade:"45 anos", cidade:"Sao Paulo, SP", empresa:"TechFlow Solutions" },
+    profissional: { headline:"CEO & Founder at TechFlow", ocupacao:"Empreendedor / Tech", exp:["CEO & Founder @ TechFlow Solutions (2015-atual)","CTO @ DataBridge (2010-2015)","MBA - FGV (2012)"] },
+    juridico: { criminal: false, processos:[{titulo:"Processo Trabalhista - TechFlow", desc:"Reclamacao trabalhista de ex-funcionario. Encerrado em 2023 com acordo. Sem relevancia."}] },
+    patrimonio: [{nome:"TechFlow Solutions Ltda", detalhe:"CNPJ 12.345.678/0001-90 &middot; Ativa &middot; R$ 500K capital"},{nome:"2 imoveis em Florianopolis", detalhe:"Apto Campeche (2019) &middot; Apto Jurere (2021)"}],
+    social: [{plat:"Instagram",link:"@ricardo.mendes - 2.3k"},{plat:"Facebook",link:"Ricardo Mendes Silva"},{plat:"LinkedIn",link:"/in/ricardomendes"}],
+    hobbies: ["Surf","Corrida","Vinhos","Viagens"], interesses: ["Investimentos","Tecnologia","Startups","Gastronomia"],
+    hobbiesDesc: "Empresario ativo, viaja frequentemente para praias. Estilo de vida premium. Casado, 2 filhos.",
+    web: [{titulo:"Ricardo Mendes - TechFlow | LinkedIn", desc:"CEO da TechFlow Solutions, empresa de software em SP..."},{titulo:"TechFlow levanta R$ 5M em rodada Seed", desc:"Startup paulista fecha rodada com fundo de investimento..."},{titulo:"Palestra Web Summit Rio - Ricardo Mendes", desc:"Experiencias sobre transformacao digital no evento..."}],
+    deals: [{nome:"Jurere Spot III - 2Q", valor:"R$ 420.000", badge:"OPEN", cls:"badge-pending"},{nome:"Novo Campeche Spot II", valor:"R$ 380.000", badge:"WON", cls:"badge-briefed"}],
+    notas: [{data:"28/03/2026",txt:"Lead pediu simulacao de ROI para Jurere Spot III. Quer comparar rentabilidade com Campeche."},{data:"22/03/2026",txt:"Reuniao online. Interesse em 2Q andar alto. Mencionou concorrente Viva Benx."},{data:"15/03/2026",txt:"Primeiro contato via Inbound (Instagram Ads). Ja tem 2 imoveis em Floripa."}]
+  },
+  ana: {
+    nome: "Ana Paula Ferreira", inicial: "A", subtitulo: "Medica &middot; Florianopolis, SC &middot; 38 anos", status: "ENRICHED",
+    briefing: `&bull; <strong>Perfil:</strong> Medica dermatologista, 38 anos, clinica propria em Florianopolis. Renda alta e estavel. Busca diversificacao patrimonial em imoveis de temporada.\n\n&bull; <strong>Interesse atual:</strong> Novo Campeche Spot II, unidade de 3 quartos. Orcamento de R$ 680.000. Quer apartamento para uso pessoal + renda quando nao estiver usando.\n\n&bull; <strong>Historico CRM:</strong> 2 reunioes anteriores. Muito detalhista, pediu planta baixa e memorial descritivo. Respondeu emails rapidamente. Marido participa das decisoes.\n\n&bull; <strong>Patrimonio:</strong> Socia da Clinica Derma Center (CNPJ ativo desde 2018, capital R$ 200K). 1 imovel proprio no Centro de Floripa.\n\n&bull; <strong>Rapport:</strong> Pratica yoga e pilates. Ama viagens de ecoturismo. Instagram com fotos de natureza e bem-estar. Casada, sem filhos.\n\n&bull; <strong>Atencao:</strong> Preocupacao com acabamento e qualidade. Mencionou experiencia negativa com outra construtora. Reforce o padrao Seazone e pos-venda.`,
+    dados: { nome:"Ana Paula Ferreira", email:"ana.ferreira@dermacenter.com.br", telefone:"(48) 99123-4567", idade:"38 anos", cidade:"Florianopolis, SC", empresa:"Clinica Derma Center" },
+    profissional: { headline:"Dermatologista - CRM/SC 12345", ocupacao:"Medica / Saude", exp:["Socia @ Clinica Derma Center (2018-atual)","Dermatologista @ Hospital Ilha (2014-2018)","Residencia Medica - USP (2012)"] },
+    juridico: { criminal: false, processos:[] },
+    patrimonio: [{nome:"Clinica Derma Center Ltda", detalhe:"CNPJ 98.765.432/0001-10 &middot; Ativa &middot; R$ 200K capital"},{nome:"1 imovel em Florianopolis", detalhe:"Apto Centro (2020)"}],
+    social: [{plat:"Instagram",link:"@anapauladermato - 8.5k"},{plat:"Facebook",link:"Ana Paula Ferreira"},{plat:"LinkedIn",link:"/in/anapaulaferreira"}],
+    hobbies: ["Yoga","Pilates","Ecoturismo","Fotografia"], interesses: ["Saude","Bem-estar","Decoracao","Investimentos"],
+    hobbiesDesc: "Estilo de vida saudavel, viaja para destinos de natureza. Casada, sem filhos. Gosta de design de interiores.",
+    web: [{titulo:"Ana Paula Ferreira - Dermatologista | LinkedIn", desc:"Medica dermatologista em Florianopolis, especialista em..."},{titulo:"Clinica Derma Center - Google Reviews", desc:"Avaliacao 4.8 estrelas, 230 reviews. Atendimento elogiado..."},{titulo:"Dra. Ana Paula - Entrevista Revista Saude SC", desc:"Especialista fala sobre cuidados com a pele no verao..."}],
+    deals: [{nome:"Novo Campeche Spot II - 3Q", valor:"R$ 680.000", badge:"OPEN", cls:"badge-pending"}],
+    notas: [{data:"30/03/2026",txt:"Pediu memorial descritivo e detalhes de acabamento. Marido quer participar da proxima reuniao."},{data:"25/03/2026",txt:"Follow-up positivo. Gostou da localizacao. Perguntou sobre gestao de temporada Seazone."},{data:"18/03/2026",txt:"Primeiro contato via indicacao de cliente existente. Interesse em Campeche."}]
+  },
+  carlos: {
+    nome: "Carlos Eduardo Braga", inicial: "C", subtitulo: "Empresario &middot; Curitiba, PR &middot; 52 anos", status: "PENDING",
+    briefing: `&bull; <strong>Perfil:</strong> Empresario do setor agro, 52 anos, baseado em Curitiba. Patrimonio solido com fazendas no interior do PR. Busca imovel de lazer no litoral nordestino.\n\n&bull; <strong>Interesse atual:</strong> Barra Grande Spot, unidade de 2 quartos. Orcamento de R$ 350.000. Primeira compra de imovel fora do Parana.\n\n&bull; <strong>Historico CRM:</strong> Primeiro contato. Veio via campanha Google Ads. Demonstrou interesse rapido, agendou reuniao em 2 dias.\n\n&bull; <strong>Patrimonio:</strong> Socio da Braga Agropecuaria (CNPJ ativo desde 2005, capital R$ 2M). Possui 3 propriedades rurais no PR.\n\n&bull; <strong>Rapport:</strong> Apaixonado por pesca e churrasco. Torcedor do Atletico-PR. Familia grande - casado, 3 filhos. Use o estilo de vida praiano como atrativo.\n\n&bull; <strong>Atencao:</strong> Lead novo, sem historico. Perfil mais conservador - pode precisar de mais dados sobre rentabilidade e seguranca do investimento.`,
+    dados: { nome:"Carlos Eduardo Braga", email:"carlos@bragaagro.com.br", telefone:"(41) 99876-5432", idade:"52 anos", cidade:"Curitiba, PR", empresa:"Braga Agropecuaria" },
+    profissional: { headline:"Diretor - Braga Agropecuaria", ocupacao:"Empresario / Agronegocio", exp:["Diretor @ Braga Agropecuaria (2005-atual)","Gerente @ Cooperativa Agraria (1998-2005)","Eng. Agronomo - UFPR (1996)"] },
+    juridico: { criminal: false, processos:[{titulo:"Disputa fundiaria - Fazenda Boa Vista", desc:"Acao de usucapiao movida por vizinho. Em andamento desde 2024. Baixa relevancia comercial."}] },
+    patrimonio: [{nome:"Braga Agropecuaria Ltda", detalhe:"CNPJ 33.444.555/0001-77 &middot; Ativa &middot; R$ 2M capital"},{nome:"3 propriedades rurais no PR", detalhe:"Faz. Boa Vista &middot; Faz. Sao Jorge &middot; Sitio Braga"}],
+    social: [{plat:"Instagram",link:"@carlosbraga_agro - 1.1k"},{plat:"Facebook",link:"Carlos Eduardo Braga"},{plat:"LinkedIn",link:"/in/carlosbraga"}],
+    hobbies: ["Pesca","Churrasco","Cavalos","Futebol"], interesses: ["Agronegocio","Investimentos","Natureza","Familia"],
+    hobbiesDesc: "Perfil familia, gosta de atividades ao ar livre. Torcedor do Atletico-PR. Viaja pouco mas quer mudar isso.",
+    web: [{titulo:"Braga Agropecuaria - Ranking Agro PR", desc:"Empresa entre as 50 maiores produtoras de soja do Parana..."},{titulo:"Carlos Braga - Painel AgroSul 2025", desc:"Empresario participa de painel sobre tecnologia no campo..."},{titulo:"Cooperativa Agraria premia ex-gerente", desc:"Carlos Eduardo Braga recebe homenagem por contribuicao..."}],
+    deals: [{nome:"Barra Grande Spot - 2Q", valor:"R$ 350.000", badge:"OPEN", cls:"badge-pending"}],
+    notas: [{data:"01/04/2026",txt:"Lead veio por Google Ads. Interesse em Barra Grande. Agendou reuniao rapido, parece decidido."}]
+  },
+  mariana: {
+    nome: "Mariana Costa Lima", inicial: "M", subtitulo: "Advogada &middot; Rio de Janeiro, RJ &middot; 33 anos", status: "PENDING",
+    briefing: `&bull; <strong>Perfil:</strong> Advogada tributarista, 33 anos, socia junior em escritorio de advocacia no RJ. Perfil jovem investidora, primeira compra de imovel para investimento.\n\n&bull; <strong>Interesse atual:</strong> Natal Spot, unidade de 1 quarto. Orcamento de R$ 520.000. Foco 100% em rentabilidade - nao pretende usar pessoalmente.\n\n&bull; <strong>Historico CRM:</strong> Primeiro contato via Instagram Ads. Fez muitas perguntas sobre rentabilidade media e taxa de ocupacao. Perfil analitico.\n\n&bull; <strong>Patrimonio:</strong> Socia do Costa Lima & Associados (escritorio pequeno). Sem imoveis em nome proprio. Mora de aluguel no Leblon.\n\n&bull; <strong>Rapport:</strong> Apaixonada por viagens internacionais, gastronomia e vinho. Solteira, sem filhos. Frequenta eventos de networking. Perfil ambicioso.\n\n&bull; <strong>Atencao:</strong> Lead analitica - vai pedir planilhas e numeros detalhados. Prepare projecoes de rentabilidade e comparativos com outros investimentos (CDB, FIIs).`,
+    dados: { nome:"Mariana Costa Lima", email:"mariana@costalima.adv.br", telefone:"(21) 98765-1234", idade:"33 anos", cidade:"Rio de Janeiro, RJ", empresa:"Costa Lima & Associados" },
+    profissional: { headline:"Advogada Tributarista - OAB/RJ", ocupacao:"Advogada / Direito Tributario", exp:["Socia @ Costa Lima & Associados (2023-atual)","Associada @ Machado Meyer (2019-2023)","LL.M Direito Tributario - FGV Rio (2020)"] },
+    juridico: { criminal: false, processos:[] },
+    patrimonio: [{nome:"Costa Lima & Associados", detalhe:"CNPJ 55.666.777/0001-88 &middot; Ativa &middot; R$ 50K capital"}],
+    social: [{plat:"Instagram",link:"@maricostalima - 3.2k"},{plat:"Facebook",link:"Mariana Costa Lima"},{plat:"LinkedIn",link:"/in/marianacostalima"}],
+    hobbies: ["Viagens","Gastronomia","Vinho","Leitura"], interesses: ["Investimentos","Direito","Networking","Mercado Financeiro"],
+    hobbiesDesc: "Perfil cosmopolita, viaja 4x ao ano para o exterior. Frequenta eventos de networking e wine bars. Solteira, sem filhos.",
+    web: [{titulo:"Mariana Costa Lima - Tributarista | LinkedIn", desc:"Advogada tributarista no Rio de Janeiro, especialista em..."},{titulo:"Costa Lima & Associados - Novo escritorio no Leblon", desc:"Escritorio inaugura sede no Leblon com foco em empresas tech..."},{titulo:"Artigo - Reforma Tributaria e Impactos | JOTA", desc:"Mariana Costa Lima analisa os impactos da reforma para PMEs..."}],
+    deals: [{nome:"Natal Spot - 1Q", valor:"R$ 520.000", badge:"OPEN", cls:"badge-pending"}],
+    notas: [{data:"31/03/2026",txt:"Primeiro contato via Instagram Ads. Muitas perguntas sobre rentabilidade, taxa de ocupacao e comparativo com FIIs."}]
+  }
+};
+
 function showScreen(name) {
     document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
     document.getElementById('screen-' + name).classList.add('active');
     window.scrollTo(0, 0);
 }
 
+function showDeal(id) {
+    const d = leads[id];
+    if (!d) return;
+    const c = document.getElementById('deal-container');
+    const statusBadge = d.status === 'ENRICHED' ? 'badge-enriched' : 'badge-pending';
+    c.innerHTML = `
+        <span class="detail-back" onclick="showScreen('agenda')">&larr; voltar para agenda</span>
+        <div class="lead-header">
+            <div class="lead-avatar">${d.inicial}</div>
+            <div class="lead-header-info"><h1>${d.nome}</h1><p>${d.subtitulo}</p></div>
+            <div class="lead-header-badges"><span class="badge ${statusBadge}">${d.status}</span><button class="btn btn-sm btn-accent">Re-enriquecer</button></div>
+        </div>
+        <div style="display:flex;gap:8px;margin-bottom:20px">
+            <button class="btn btn-sm btn-outline">Regenerar briefing</button>
+            <button class="btn btn-sm btn-outline">Reenviar WhatsApp</button>
+        </div>
+        <div class="enrichment-grid">
+            <div class="e-section full"><div class="e-header"><h3>// Resumo IA</h3><span class="badge badge-briefed">GERADO</span></div><div class="e-body"><div class="briefing-box">${d.briefing}</div></div></div>
+            <div class="e-section"><div class="e-header"><h3>// Dados Pessoais</h3></div><div class="e-body"><div class="meta-grid">
+                ${Object.entries(d.dados).map(([k,v])=>`<div class="meta-item"><label>${k}</label><span>${v}</span></div>`).join('')}
+            </div></div></div>
+            <div class="e-section"><div class="e-header"><h3>// Perfil Profissional</h3></div><div class="e-body">
+                <div class="meta-grid"><div class="meta-item"><label>Headline</label><span>${d.profissional.headline}</span></div><div class="meta-item"><label>Ocupacao</label><span>${d.profissional.ocupacao}</span></div></div>
+                <div style="margin-top:10px;font-size:0.82rem">${d.profissional.exp.map((e,i)=>`<div style="padding:3px 0;${i>0?'color:var(--text-dim)':''}">${e}</div>`).join('')}</div>
+            </div></div>
+            <div class="e-section"><div class="e-header"><h3>// Historico Juridico</h3></div><div class="e-body">
+                <p style="color:var(--success);font-size:0.82rem;margin-bottom:8px">&#10003; Nenhum processo criminal</p>
+                ${d.juridico.processos.map(p=>`<div class="lawsuit-item"><div class="lawsuit-title">${p.titulo}</div><div class="lawsuit-snippet">${p.desc}</div></div>`).join('') || '<p style="font-size:0.82rem;color:var(--text-dim)">Nenhum processo encontrado.</p>'}
+            </div></div>
+            <div class="e-section"><div class="e-header"><h3>// Patrimonio / Empresas</h3></div><div class="e-body">
+                ${d.patrimonio.map((p,i)=>`<div style="padding:6px 0;${i<d.patrimonio.length-1?'border-bottom:1px solid var(--border)':''}"><div style="font-weight:600;font-size:0.82rem">${p.nome}</div><div style="font-size:0.75rem;color:var(--text-dim);font-family:var(--font-mono)">${p.detalhe}</div></div>`).join('')}
+            </div></div>
+            <div class="e-section"><div class="e-header"><h3>// Redes Sociais</h3></div><div class="e-body">
+                ${d.social.map(s=>`<div class="social-row"><span class="social-platform">${s.plat}</span><a href="#">${s.link}</a></div>`).join('')}
+            </div></div>
+            <div class="e-section"><div class="e-header"><h3>// Hobbies & Interesses</h3></div><div class="e-body">
+                <label style="display:block;font-family:var(--font-mono);font-size:0.6rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:0.8px;margin-bottom:6px">Hobbies</label>
+                <div class="hobby-tags">${d.hobbies.map(h=>`<span class="hobby-tag">${h}</span>`).join('')}</div>
+                <label style="display:block;font-family:var(--font-mono);font-size:0.6rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:0.8px;margin:12px 0 6px">Interesses</label>
+                <div class="hobby-tags">${d.interesses.map(h=>`<span class="hobby-tag">${h}</span>`).join('')}</div>
+                <p style="font-size:0.8rem;color:var(--text-dim);margin-top:10px">${d.hobbiesDesc}</p>
+            </div></div>
+            <div class="e-section"><div class="e-header"><h3>// Presenca na Web</h3></div><div class="e-body">
+                ${d.web.map((w,i)=>`<div style="padding:5px 0;${i<d.web.length-1?'border-bottom:1px solid var(--border)':''}"><a href="#" style="font-size:0.82rem;font-weight:500">${w.titulo}</a><div style="font-size:0.72rem;color:var(--text-dim)">${w.desc}</div></div>`).join('')}
+            </div></div>
+            <div class="e-section full"><div class="e-header"><h3>// Historico CRM</h3></div><div class="e-body">
+                <label style="display:block;font-family:var(--font-mono);font-size:0.6rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:0.8px;margin-bottom:8px">Deals</label>
+                ${d.deals.map((dl,i)=>`<div style="padding:5px 0;${i<d.deals.length-1?'border-bottom:1px solid var(--border);':''}font-size:0.82rem;${i>0?'color:var(--text-dim)':''}">${dl.nome} &middot; ${dl.valor} &middot; <span class="badge ${dl.cls}">${dl.badge}</span></div>`).join('')}
+                <label style="display:block;font-family:var(--font-mono);font-size:0.6rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:0.8px;margin:14px 0 8px">Notas</label>
+                <div class="timeline">
+                    ${d.notas.map(n=>`<div class="timeline-item"><div class="timeline-date">${n.data}</div><div class="timeline-content">${n.txt}</div></div>`).join('')}
+                </div>
+            </div></div>
+        </div>`;
+    showScreen('deal');
+}
+
 function searchDeal() {
     const id = document.getElementById('deal-input').value.trim();
-    if (id) showScreen('deal');
+    if (id) showDeal('ricardo');
 }
 
 document.getElementById('deal-input').addEventListener('keydown', function(e) {
