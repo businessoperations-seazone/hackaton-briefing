@@ -10,26 +10,26 @@
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
         :root {
-            --bg: #011337;
-            --surface: #0C1640;
-            --surface-2: #132050;
-            --surface-hover: #1a2a5e;
-            --border: #1e3060;
-            --border-light: #2a4080;
-            --text: #E0E0E0;
-            --text-muted: #9ca3af;
-            --text-dim: #6b7fa0;
+            --bg: #F5F6FA;
+            --surface: #FFFFFF;
+            --surface-2: #F0F1F5;
+            --surface-hover: #E8E9F0;
+            --border: #E0E2EA;
+            --border-light: #D0D3DC;
+            --text: #1B2A4A;
+            --text-muted: #5A6478;
+            --text-dim: #8892A4;
             --accent: #F97316;
             --accent-hover: #FB923C;
-            --accent-glow: rgba(249, 115, 22, 0.15);
-            --accent-glow-strong: rgba(249, 115, 22, 0.25);
+            --accent-glow: rgba(249, 115, 22, 0.10);
+            --accent-glow-strong: rgba(249, 115, 22, 0.18);
             --coral: #F1605D;
             --coral-hover: #FF6763;
             --teal: #0d9488;
             --success: #047755;
-            --success-glow: rgba(4, 119, 85, 0.12);
+            --success-glow: rgba(4, 119, 85, 0.08);
             --warning: #F59E0B;
-            --warning-glow: rgba(245, 158, 11, 0.12);
+            --warning-glow: rgba(245, 158, 11, 0.08);
             --danger: #F1605D;
             --whatsapp: #25D366;
             --telegram: #2AABEE;
@@ -51,9 +51,10 @@
 
         /* ===== Header ===== */
         .header {
-            background: rgba(12, 22, 64, 0.92);
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--border);
+            box-shadow: 0 1px 4px rgba(0,0,0,0.06);
             padding: 0 32px;
             height: 56px;
             display: flex;
@@ -73,7 +74,7 @@
         .logo {
             font-family: var(--font-mono);
             font-size: 1.1rem; font-weight: 700;
-            color: white; text-decoration: none; cursor: pointer;
+            color: #1B2A4A; text-decoration: none; cursor: pointer;
             letter-spacing: -0.5px;
         }
 
@@ -93,7 +94,7 @@
 
         .avatar {
             width: 30px; height: 30px; border-radius: 50%;
-            background: var(--accent); color: white;
+            background: var(--accent); color: #FFFFFF;
             display: flex; align-items: center; justify-content: center;
             font-weight: 600; font-size: 0.75rem;
             font-family: var(--font-mono);
@@ -141,7 +142,7 @@
         .hero-title {
             font-family: var(--font-mono);
             font-size: 1.6rem; font-weight: 700;
-            color: white; margin-bottom: 8px;
+            color: #1B2A4A; margin-bottom: 8px;
             letter-spacing: -0.5px;
         }
 
@@ -307,7 +308,7 @@
             font-family: var(--font-mono);
         }
 
-        .stat-num { font-size: 1.4rem; font-weight: 700; color: white; }
+        .stat-num { font-size: 1.4rem; font-weight: 700; color: #1B2A4A; }
         .stat-label { font-size: 0.7rem; color: var(--text-dim); margin-left: 4px; }
         .stat-sep { width: 1px; background: var(--border); align-self: stretch; }
 
@@ -523,7 +524,7 @@
             content: '';
             position: fixed;
             top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(1, 19, 55, 0.90);
+            background: rgba(245, 246, 250, 0.85);
             z-index: 0;
             pointer-events: none;
         }
@@ -636,82 +637,10 @@
             </div>
         </div>
 
-        <!-- Materiais (no corpo da pagina) -->
-        <div class="section-card">
-            <div class="materials-header">
-                <div class="materials-icon">&#128196;</div>
-                <div>
-                    <div class="section-label">HUB DE MATERIAIS</div>
-                    <div class="section-desc" style="margin-bottom:0">Materiais de apresentacao organizados por funil</div>
-                </div>
-                <button class="btn btn-sm btn-outline" style="margin-left:auto" onclick="showScreen('materials')">Ver todos &rarr;</button>
-            </div>
-
-            <div class="stats-bar">
-                <div><span class="stat-num">12</span><span class="stat-label">materiais</span></div>
-                <div class="stat-sep"></div>
-                <div><span class="stat-num">2</span><span class="stat-label">funis</span></div>
-                <div class="stat-sep"></div>
-                <div><span class="stat-num">6</span><span class="stat-label">subprodutos</span></div>
-            </div>
-
-            <div class="material-grid">
-                <div class="material-card c-red"><div class="mat-icon mi-red">&#128196;</div><div class="mat-title">Minuta do Contrato</div><span class="mat-tag">Geral</span><a href="#" class="mat-link">&#8599; Abrir</a></div>
-                <div class="material-card c-green"><div class="mat-icon mi-green">&#127760;</div><div class="mat-title">Manual do Segurado</div><span class="mat-tag">Geral</span><a href="#" class="mat-link">&#8599; Abrir</a></div>
-                <div class="material-card c-blue"><div class="mat-icon mi-blue">&#128187;</div><div class="mat-title">Apresentacao Jurere III</div><span class="mat-tag">Jurere Spot III</span><a href="#" class="mat-link">&#8599; Abrir</a></div>
-            </div>
-        </div>
 
     </div>
 </div>
 
-<!-- ===== SCREEN 2: MATERIALS FULL ===== -->
-<div class="screen" id="screen-materials">
-    <div class="container">
-        <span class="detail-back" onclick="showScreen('agenda')">&larr; Voltar para agenda</span>
-
-        <div class="materials-header" style="margin-bottom:0">
-            <div class="materials-icon">&#128196;</div>
-            <div><div style="font-size:1.15rem;font-weight:700">Hub de Materiais</div><div style="color:var(--text-dim);font-size:0.8rem">Todos os materiais de apresentacao organizados por funil</div></div>
-        </div>
-
-        <div class="stats-bar">
-            <div><span class="stat-num">12</span><span class="stat-label">materiais</span></div>
-            <div class="stat-sep"></div>
-            <div><span class="stat-num">2</span><span class="stat-label">funis</span></div>
-            <div class="stat-sep"></div>
-            <div><span class="stat-num">6</span><span class="stat-label">subprodutos</span></div>
-        </div>
-
-        <div class="search-row" style="margin-bottom:24px">
-            <input type="text" class="search-input" placeholder="Buscar materiais..." style="max-width:400px">
-            <div class="filter-chip"><select><option>Todos os funis</option></select></div>
-            <div class="filter-chip"><select><option>Todos subprodutos</option></select></div>
-        </div>
-
-        <div class="pipeline-group">
-            <div class="pipeline-header"><span class="pipeline-name">Comercial SZS</span><span class="pipeline-meta">Pipeline 14 &middot; 4 materiais</span></div>
-            <div class="material-grid">
-                <div class="material-card c-red"><div class="mat-icon mi-red">&#128196;</div><div class="mat-title">Minuta do Contrato</div><span class="mat-tag">Geral</span><a href="#" class="mat-link">&#8599; Abrir material</a></div>
-                <div class="material-card c-green"><div class="mat-icon mi-green">&#127760;</div><div class="mat-title">Manual do Segurado</div><span class="mat-tag">Geral</span><a href="#" class="mat-link">&#8599; Abrir material</a></div>
-                <div class="material-card c-blue"><div class="mat-icon mi-blue">&#128205;</div><div class="mat-title">Mapa de Atuacao</div><span class="mat-tag">Geral</span><a href="#" class="mat-link">&#8599; Abrir material</a></div>
-                <div class="material-card c-yellow"><div class="mat-icon mi-yellow">&#128172;</div><div class="mat-title">Boas Vindas</div><span class="mat-tag">Geral</span><a href="#" class="mat-link">&#8599; Abrir material</a></div>
-            </div>
-        </div>
-
-        <div class="pipeline-group">
-            <div class="pipeline-header"><span class="pipeline-name">Vendas Spot</span><span class="pipeline-meta">Pipeline 28 &middot; 6 materiais</span></div>
-            <div class="material-grid">
-                <div class="material-card c-blue"><div class="mat-icon mi-blue">&#128187;</div><div class="mat-title">Apresentacao JURERE SPOT III</div><span class="mat-tag">Jurere Spot III</span><a href="#" class="mat-link">&#8599; Abrir material</a></div>
-                <div class="material-card c-blue"><div class="mat-icon mi-blue">&#128187;</div><div class="mat-title">Apresentacao NATAL SPOT</div><span class="mat-tag">Natal Spot</span><a href="#" class="mat-link">&#8599; Abrir material</a></div>
-                <div class="material-card c-blue"><div class="mat-icon mi-blue">&#128187;</div><div class="mat-title">Apresentacao NOVO CAMPECHE</div><span class="mat-tag">Novo Campeche II</span><a href="#" class="mat-link">&#8599; Abrir material</a></div>
-                <div class="material-card c-pink"><div class="mat-icon mi-pink">&#128161;</div><div class="mat-title">Base de Conhecimento</div><span class="mat-tag">Geral</span><a href="#" class="mat-link">&#8599; Abrir material</a></div>
-                <div class="material-card c-green"><div class="mat-icon mi-green">&#10084;</div><div class="mat-title">Spotometro</div><span class="mat-tag">Geral</span><a href="#" class="mat-link">&#8599; Abrir material</a></div>
-                <div class="material-card c-blue"><div class="mat-icon mi-blue">&#128187;</div><div class="mat-title">Apresentacao BARRA GRANDE</div><span class="mat-tag">Barra Grande</span><a href="#" class="mat-link">&#8599; Abrir material</a></div>
-            </div>
-        </div>
-    </div>
-</div>
 
 <!-- ===== SCREEN 3: DEAL DETAIL ===== -->
 <div class="screen" id="screen-deal">
