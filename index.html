@@ -1017,9 +1017,36 @@ function showDeal(id) {
     showScreen('deal');
 }
 
+// Mapeamento: ID Pipedrive -> chave do lead
+const pipedriveMap = {
+    '1001': 'ricardo',
+    '1002': 'ana',
+    '1003': 'carlos',
+    '1004': 'mariana'
+};
+
 function searchDeal() {
     const id = document.getElementById('deal-input').value.trim();
-    if (id) showDeal('ricardo');
+    if (!id) return;
+
+    // Tenta pelo mapeamento de ID do Pipedrive
+    if (pipedriveMap[id]) {
+        showDeal(pipedriveMap[id]);
+        return;
+    }
+
+    // Tenta buscar por nome parcial nos leads
+    const idLower = id.toLowerCase();
+    const found = Object.keys(leads).find(key =>
+        leads[key].nome.toLowerCase().includes(idLower)
+    );
+
+    if (found) {
+        showDeal(found);
+        return;
+    }
+
+    alert('Deal #' + id + ' nao encontrado.\n\nIDs de demonstracao: 1001 (Ricardo), 1002 (Ana Paula), 1003 (Carlos), 1004 (Mariana)\n\nVoce tambem pode buscar por nome.');
 }
 
 document.getElementById('deal-input').addEventListener('keydown', function(e) {
