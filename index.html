@@ -486,6 +486,130 @@
         .lawsuit-title { font-size: 0.82rem; font-weight: 500; }
         .lawsuit-snippet { font-size: 0.78rem; color: var(--text-dim); margin-top: 2px; }
 
+        /* ===== Login Screen ===== */
+        .login-wrapper {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 50%, #1a2555 100%);
+            position: relative;
+        }
+
+        .login-wrapper::before {
+            content: '';
+            position: absolute; inset: 0;
+            background: url('bg-spot.png') center/cover;
+            opacity: 0.08;
+        }
+
+        .login-card {
+            position: relative;
+            background: var(--surface);
+            border-radius: 12px;
+            padding: 40px;
+            width: 100%;
+            max-width: 420px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .login-logo {
+            font-family: var(--font-mono);
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--navy);
+            text-align: center;
+            margin-bottom: 4px;
+        }
+
+        .login-logo span { color: var(--accent); }
+
+        .login-subtitle {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            color: var(--text-dim);
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 32px;
+        }
+
+        .login-field {
+            margin-bottom: 16px;
+        }
+
+        .login-field label {
+            display: block;
+            font-family: var(--font-mono);
+            font-size: 0.68rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+
+        .login-field input {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            font-size: 0.88rem;
+            font-family: var(--font-sans);
+            background: var(--surface-2);
+            color: var(--text);
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .login-field input:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 2px var(--accent-glow);
+        }
+
+        .login-field input::placeholder { color: var(--text-dim); }
+
+        .login-btn {
+            width: 100%;
+            padding: 13px;
+            margin-top: 8px;
+            border: none;
+            border-radius: 6px;
+            background: var(--accent);
+            color: #FFFFFF;
+            font-size: 0.88rem;
+            font-weight: 600;
+            font-family: var(--font-mono);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .login-btn:hover {
+            background: var(--accent-hover);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px var(--accent-glow-strong);
+        }
+
+        .login-error {
+            color: var(--accent);
+            font-size: 0.78rem;
+            font-family: var(--font-mono);
+            text-align: center;
+            margin-top: 12px;
+            display: none;
+        }
+
+        .login-footer {
+            text-align: center;
+            margin-top: 24px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+            font-family: var(--font-mono);
+            font-size: 0.65rem;
+            color: var(--text-dim);
+            letter-spacing: 0.5px;
+        }
+
         /* ===== Screens ===== */
         .screen { display: none; }
         .screen.active { display: block; }
@@ -561,8 +685,31 @@
 </head>
 <body>
 
+<!-- ===== SCREEN 0: LOGIN ===== -->
+<div id="login-screen" class="login-wrapper">
+    <div class="login-card">
+        <div class="login-logo">sea<span>zone</span></div>
+        <div class="login-subtitle">Meeting Prep</div>
+        <div class="login-field">
+            <label>Nome completo</label>
+            <input type="text" id="login-name" placeholder="Ex: Daniel Honda">
+        </div>
+        <div class="login-field">
+            <label>Email corporativo</label>
+            <input type="email" id="login-email" placeholder="Ex: daniel@seazone.com.br">
+        </div>
+        <div class="login-field">
+            <label>WhatsApp (com DDD)</label>
+            <input type="tel" id="login-phone" placeholder="Ex: (48) 99999-0000">
+        </div>
+        <button class="login-btn" onclick="doLogin()">Entrar</button>
+        <div class="login-error" id="login-error">Preencha todos os campos</div>
+        <div class="login-footer">Hackaton Bizops 2026</div>
+    </div>
+</div>
+
 <!-- HEADER -->
-<header class="header">
+<header class="header" id="main-header" style="display:none">
     <div class="header-inner">
         <div class="header-left">
             <span class="logo" onclick="showScreen('agenda')">sea<span class="logo-accent">zone</span></span>
@@ -570,14 +717,15 @@
             <span class="header-subtitle">Meeting Prep</span>
         </div>
         <div class="header-right">
-            <div class="avatar">D</div>
-            <span class="user-name">Daniel</span>
+            <div class="avatar" id="header-avatar">D</div>
+            <span class="user-name" id="header-username">Daniel</span>
+            <span class="detail-back" onclick="doLogout()" style="margin-left:8px;font-size:0.7rem;color:rgba(255,255,255,0.4);cursor:pointer">Sair</span>
         </div>
     </div>
 </header>
 
 <!-- ===== SCREEN 1: AGENDA ===== -->
-<div class="screen active" id="screen-agenda">
+<div class="screen" id="screen-agenda">
 
     <div class="hero-bg">
         <div class="hero-content">
@@ -605,36 +753,36 @@
             <div class="section-desc">Deals nas etapas "Agendado" atribuidos a voce.</div>
 
             <div class="filter-bar">
-                <div class="filter-chip"><select><option>Todos os funis</option><option>Comercial SZS</option><option>Vendas Spot</option></select></div>
-                <div class="filter-chip"><select><option>Todos os proprietarios</option><option>Daniel</option><option>Joao</option></select></div>
-                <div class="filter-chip"><select><option>Todos os canais</option><option>Inbound</option><option>Outbound</option></select></div>
-                <span class="filter-count">4 deals</span>
+                <div class="filter-chip"><select id="filter-meetings" onchange="filterDeals()"><option value="all">Todas as reunioes</option><option value="mine">Minhas reunioes</option></select></div>
+                <div class="filter-chip"><select id="filter-funnel" onchange="filterDeals()"><option value="all">Todos os funis</option><option value="Comercial SZS">Comercial SZS</option><option value="Vendas Spot">Vendas Spot</option></select></div>
+                <div class="filter-chip"><select id="filter-channel" onchange="filterDeals()"><option value="all">Todos os canais</option><option value="Inbound">Inbound</option><option value="Outbound">Outbound</option></select></div>
+                <span class="filter-count" id="deal-count">4 deals</span>
             </div>
 
-            <div class="deals-list">
-                <div class="deal-row" onclick="showDeal('ricardo')">
+            <div class="deals-list" id="deals-list">
+                <div class="deal-row" onclick="showDeal('ricardo')" data-closer="Daniel Honda" data-day="hoje">
                     <span class="deal-time">09:30</span>
                     <div class="deal-info"><div class="deal-name">Ricardo Mendes Silva</div><div class="deal-subject">Reuniao - Interesse Jurere Spot III</div></div>
                     <span class="deal-value">R$ 420.000</span>
                     <span class="deal-closer">Daniel</span>
                     <span class="badge badge-briefed">BRIEFED</span>
                 </div>
-                <div class="deal-row" onclick="showDeal('ana')">
+                <div class="deal-row" onclick="showDeal('ana')" data-closer="Daniel Honda" data-day="hoje">
                     <span class="deal-time">11:00</span>
                     <div class="deal-info"><div class="deal-name">Ana Paula Ferreira</div><div class="deal-subject">Follow-up - Novo Campeche Spot II</div></div>
                     <span class="deal-value">R$ 680.000</span>
                     <span class="deal-closer">Daniel</span>
                     <span class="badge badge-briefed">BRIEFED</span>
                 </div>
-                <div class="deal-row" onclick="showDeal('carlos')">
+                <div class="deal-row" onclick="showDeal('carlos')" data-closer="Joao Silva" data-day="hoje">
                     <span class="deal-time">14:30</span>
                     <div class="deal-info"><div class="deal-name">Carlos Eduardo Braga</div><div class="deal-subject">Apresentacao - Barra Grande Spot</div></div>
                     <span class="deal-value">R$ 350.000</span>
                     <span class="deal-closer">Joao</span>
                     <span class="badge badge-pending">PENDENTE</span>
                 </div>
-                <div class="section-divider">amanha</div>
-                <div class="deal-row" onclick="showDeal('mariana')">
+                <div class="section-divider" id="divider-amanha">amanha</div>
+                <div class="deal-row" onclick="showDeal('mariana')" data-closer="Daniel Honda" data-day="amanha">
                     <span class="deal-time">10:00</span>
                     <div class="deal-info"><div class="deal-name">Mariana Costa Lima</div><div class="deal-subject">Primeiro contato - Natal Spot</div></div>
                     <span class="deal-value">R$ 520.000</span>
@@ -655,11 +803,98 @@
 </div>
 
 <!-- FOOTER -->
-<footer class="footer">
+<footer class="footer" id="main-footer" style="display:none">
     <p class="footer-author"><span>Daniel Itiro Honda</span> - Bizops - Hackaton 2026</p>
 </footer>
 
 <script>
+// ===== AUTH =====
+function getUser() {
+    const u = localStorage.getItem('sz_user');
+    return u ? JSON.parse(u) : null;
+}
+
+function doLogin() {
+    const name = document.getElementById('login-name').value.trim();
+    const email = document.getElementById('login-email').value.trim();
+    const phone = document.getElementById('login-phone').value.trim();
+    const err = document.getElementById('login-error');
+
+    if (!name || !email || !phone) {
+        err.style.display = 'block';
+        err.textContent = 'Preencha todos os campos';
+        return;
+    }
+    if (!email.includes('@')) {
+        err.style.display = 'block';
+        err.textContent = 'Email invalido';
+        return;
+    }
+
+    const user = { name, email, phone, initial: name.charAt(0).toUpperCase() };
+    localStorage.setItem('sz_user', JSON.stringify(user));
+    enterApp(user);
+}
+
+function doLogout() {
+    localStorage.removeItem('sz_user');
+    document.getElementById('main-header').style.display = 'none';
+    document.getElementById('main-footer').style.display = 'none';
+    document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+    document.getElementById('login-screen').style.display = 'flex';
+}
+
+function enterApp(user) {
+    document.getElementById('login-screen').style.display = 'none';
+    document.getElementById('main-header').style.display = '';
+    document.getElementById('main-footer').style.display = '';
+    document.getElementById('header-avatar').textContent = user.initial;
+    document.getElementById('header-username').textContent = user.name.split(' ')[0];
+    showScreen('agenda');
+}
+
+// Auto-login se ja logou antes
+(function() {
+    const user = getUser();
+    if (user) {
+        enterApp(user);
+    }
+
+    // Enter no login
+    ['login-name','login-email','login-phone'].forEach(id => {
+        document.getElementById(id).addEventListener('keydown', function(e) {
+            if (e.key === 'Enter') doLogin();
+        });
+    });
+})();
+
+// ===== FILTER =====
+function filterDeals() {
+    const mode = document.getElementById('filter-meetings').value;
+    const user = getUser();
+    const rows = document.querySelectorAll('#deals-list .deal-row');
+    const divider = document.getElementById('divider-amanha');
+    let visible = 0;
+    let amanhaVisible = false;
+
+    rows.forEach(row => {
+        let show = true;
+        if (mode === 'mine' && user) {
+            const closer = row.getAttribute('data-closer') || '';
+            show = closer.toLowerCase().includes(user.name.split(' ')[0].toLowerCase());
+        }
+        row.style.display = show ? '' : 'none';
+        if (show) {
+            visible++;
+            if (row.getAttribute('data-day') === 'amanha') amanhaVisible = true;
+        }
+    });
+
+    if (divider) divider.style.display = amanhaVisible ? '' : 'none';
+    document.getElementById('deal-count').textContent = visible + ' deal' + (visible !== 1 ? 's' : '');
+}
+
+// ===== LEADS DATA =====
 const leads = {
   ricardo: {
     nome: "Ricardo Mendes Silva", inicial: "R", subtitulo: "Investidor &middot; Sao Paulo, SP &middot; 45 anos", status: "ENRICHED",
